@@ -6,40 +6,40 @@ const Projects: React.FC = () => {
   const projects = [
     {
       id: 1,
-      title: "FlutterGram",
-      description: "A social media application built with Flutter and Firebase with real-time chat, post sharing, and user profiles.",
-      image: "https://picsum.photos/id/1/800/600",
-      tags: ["Flutter", "Firebase", "Bloc"],
+      title: "PG Management Platform",
+      description: "A comprehensive platform for PG listings with multi-role functionality, RESTful APIs, and JWT authentication.",
+      image: "https://picsum.photos/id/26/800/600",
+      tags: ["React.js", "Node.js", "MongoDB", "Razorpay API"],
       liveUrl: "#",
-      githubUrl: "https://github.com/yourusername/fluttergram",
+      githubUrl: "https://github.com/abhishek-kumar/pg-management",
       featured: true
     },
     {
       id: 2,
-      title: "Weather App",
-      description: "A clean and minimal weather app with beautiful UI animations and accurate forecasts.",
-      image: "https://picsum.photos/id/64/800/600",
-      tags: ["Flutter", "API", "Provider"],
+      title: "LIVE Result Software",
+      description: "A dynamic result management system with responsive design for enhanced user experience and automated testing workflows.",
+      image: "https://picsum.photos/id/180/800/600",
+      tags: ["React.js", "JavaScript", "HTML/CSS"],
       liveUrl: "#",
-      githubUrl: "https://github.com/yourusername/weather-app"
+      githubUrl: "https://github.com/abhishek-kumar/live-result"
     },
     {
       id: 3,
-      title: "Task Manager",
-      description: "A productivity app for managing daily tasks with notifications and cloud sync.",
-      image: "https://picsum.photos/id/48/800/600",
-      tags: ["Flutter", "Hive", "GetX"],
+      title: "Tournament Management System",
+      description: "System for tournament registration and result tracking, optimized for performance and user engagement.",
+      image: "https://picsum.photos/id/342/800/600",
+      tags: ["HTML", "CSS", "PHP", "JavaScript"],
       liveUrl: "#",
-      githubUrl: "https://github.com/yourusername/task-manager"
+      githubUrl: "https://github.com/abhishek-kumar/tournament-management"
     },
     {
       id: 4,
-      title: "E-Commerce App",
-      description: "A fully functional e-commerce application with payment integration and product tracking.",
-      image: "https://picsum.photos/id/21/800/600",
-      tags: ["Flutter", "Firebase", "Stripe"],
-      liveUrl: "#",
-      githubUrl: "https://github.com/yourusername/ecommerce-app"
+      title: "Tracknplay Mobile App",
+      description: "Flutter app for managing tournaments with slot creation, point tables, and user performance tracking.",
+      image: "https://picsum.photos/id/237/800/600",
+      tags: ["Flutter", "Dart", "Firebase"],
+      liveUrl: "https://play.google.com/store/apps/details?id=com.abhishek.tracknplay",
+      githubUrl: "https://github.com/abhishek-kumar/tracknplay"
     },
   ];
 
@@ -47,7 +47,7 @@ const Projects: React.FC = () => {
     <section id="projects" className="py-24 section-padding bg-secondary/20">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-2xl font-bold mb-2 font-mono text-gradient">My Projects</h2>
-        <h3 className="text-3xl font-bold mb-12">Some Things I've Built</h3>
+        <h3 className="text-3xl font-bold mb-12">Featured Work</h3>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project) => (

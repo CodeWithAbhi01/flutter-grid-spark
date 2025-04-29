@@ -1,50 +1,71 @@
 
 import React from 'react';
 import { Card } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
 
 const About: React.FC = () => {
   const skills = [
-    "Flutter", "Dart", "Firebase", 
-    "UI/UX Design", "REST APIs", 
-    "State Management", "Git", 
-    "Android", "iOS", "React"
+    { name: "JavaScript", level: 90 },
+    { name: "React.js", level: 85 },
+    { name: "Flutter/Dart", level: 80 },
+    { name: "Node.js", level: 75 },
+    { name: "HTML/CSS", level: 90 },
+    { name: "MongoDB", level: 70 },
+    { name: "Git/GitHub", level: 85 },
+    { name: "Java", level: 65 },
+    { name: "C", level: 60 },
   ];
   
   return (
     <section id="about" className="py-24 section-padding">
       <div className="container mx-auto max-w-5xl">
-        <div className="flex flex-col lg:flex-row gap-16 items-center">
+        <h2 className="text-2xl font-bold mb-2 font-mono text-gradient">About Me</h2>
+        <h3 className="text-3xl font-bold mb-12">Professional Background</h3>
+        
+        <div className="flex flex-col lg:flex-row gap-16">
           <div className="flex-1">
-            <h2 className="text-2xl font-bold mb-2 font-mono text-gradient">About Me</h2>
-            <h3 className="text-3xl font-bold mb-6">Flutter Developer with a passion for beautiful UI and clean code</h3>
-            <div className="space-y-4 text-muted-foreground">
-              <p>
-                Hello! I'm Abhishek, a Flutter developer who loves creating exceptional 
-                mobile applications. My passion lies in building software that provides 
-                pixel-perfect, smooth experiences.
+            <div className="space-y-6 text-muted-foreground">
+              <p className="text-lg">
+                I'm a passionate full stack developer with experience in both web and mobile development. 
+                Currently working as a <span className="text-primary">Technical Support Advisor at Concentrix Services India Private Limited</span> in Bangalore, 
+                where I provide technical support and resolve customer issues in the Operations department.
               </p>
               <p>
-                I started my journey in mobile development with Android, then discovered 
-                Flutter and became passionate about building cross-platform applications. 
-                I enjoy solving complex problems and turning them into simple, beautiful interface designs.
+                Previously, I worked as a <span className="text-primary">Software Development Intern at Biztechnosys Infotech Pvt Ltd</span>, 
+                where I developed mobile and web applications using React.js, Flutter, and Node.js, and implemented 
+                automated CI/CD pipelines that reduced deployment time by 40%.
               </p>
               <p>
-                When I'm not coding, you might find me exploring the latest tech trends, 
-                contributing to open source, or playing video games.
+                I'm focused on creating high-performance, user-friendly applications that solve real-world problems.
+                My expertise spans across the full development stack, from designing intuitive front-end interfaces 
+                to building robust back-end systems.
               </p>
+              
+              <div className="flex flex-wrap gap-3 pt-4">
+                {["React.js", "Flutter", "Node.js", "MongoDB", "HTML5", "CSS3", "JavaScript", "Dart", "Git", "API Design"].map((tech) => (
+                  <span 
+                    key={tech}
+                    className="px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full text-sm"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
+          
           <div className="w-full lg:w-2/5">
             <Card className="glass p-8 animate-float">
-              <h3 className="text-xl font-bold mb-6 font-mono">Skills &amp; Technologies</h3>
-              <div className="flex flex-wrap gap-3">
+              <h3 className="text-xl font-bold mb-6 font-mono">Technical Proficiency</h3>
+              <div className="space-y-4">
                 {skills.map((skill) => (
-                  <span 
-                    key={skill}
-                    className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm"
-                  >
-                    {skill}
-                  </span>
+                  <div key={skill.name} className="space-y-2">
+                    <div className="flex justify-between">
+                      <span className="text-sm font-medium">{skill.name}</span>
+                      <span className="text-sm text-muted-foreground">{skill.level}%</span>
+                    </div>
+                    <Progress value={skill.level} className="h-2" />
+                  </div>
                 ))}
               </div>
             </Card>

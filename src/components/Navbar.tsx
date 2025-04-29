@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { Menu } from 'lucide-react';
+import { Download, Menu } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,9 +30,9 @@ const Navbar: React.FC = () => {
       isScrolled ? 'bg-background/80 backdrop-blur-lg shadow-md' : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-4 md:px-6 py-4 flex items-center justify-between">
-        <a href="#" className="text-xl font-mono font-bold text-white">
+        <a href="#home" className="text-xl font-mono font-bold text-white">
           <span className="text-primary">&lt;</span>
-          Abhishek
+          Abhishek Kumar
           <span className="text-primary">/&gt;</span>
         </a>
         
@@ -65,7 +65,9 @@ const Navbar: React.FC = () => {
               </li>
             ))}
             <li>
-              <Button className="bg-primary hover:bg-primary/90">Resume</Button>
+              <Button className="gap-2" onClick={(e) => e.preventDefault()}>
+                Resume <Download className="h-4 w-4" />
+              </Button>
             </li>
           </ul>
         </nav>

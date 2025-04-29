@@ -2,15 +2,15 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Github, Linkedin, Mail, Smartphone } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 
 const Contact: React.FC = () => {
   const contactLinks = [
     {
       name: "Email",
       icon: <Mail className="h-5 w-5" />,
-      href: "mailto:abhishek@example.com",
-      label: "abhishek@example.com"
+      href: "mailto:abhisheksingh@gmail.com",
+      label: "abhisheksingh@gmail.com"
     },
     {
       name: "LinkedIn",
@@ -26,20 +26,26 @@ const Contact: React.FC = () => {
     },
     {
       name: "Phone",
-      icon: <Smartphone className="h-5 w-5" />,
-      href: "tel:+1234567890",
-      label: "+123 456 7890"
+      icon: <Phone className="h-5 w-5" />,
+      href: "tel:+915487875421",
+      label: "+91 548 787 5421"
+    },
+    {
+      name: "Location",
+      icon: <MapPin className="h-5 w-5" />,
+      href: "https://maps.google.com/?q=Bangalore,India",
+      label: "Bangalore, India"
     }
   ];
   
   return (
     <section id="contact" className="py-24 section-padding">
-      <div className="container mx-auto max-w-3xl text-center">
+      <div className="container mx-auto max-w-3xl">
         <h2 className="text-2xl font-bold mb-2 font-mono text-gradient">Get In Touch</h2>
-        <h3 className="text-3xl font-bold mb-6">Let's Create Something Amazing Together</h3>
-        <p className="text-muted-foreground mb-12 max-w-md mx-auto">
-          I'm currently open for freelance projects and full-time opportunities.
-          Whether you have a question or just want to say hi, I'll try my best to get back to you!
+        <h3 className="text-3xl font-bold mb-6 text-center">Let's Work Together</h3>
+        <p className="text-muted-foreground mb-12 max-w-md mx-auto text-center">
+          I'm currently available for freelance projects and full-time opportunities.
+          Whether you have a project in mind or just want to connect, feel free to reach out!
         </p>
         
         <Card className="glass p-8">
@@ -63,9 +69,9 @@ const Contact: React.FC = () => {
             ))}
           </div>
           
-          <div className="mt-8">
+          <div className="mt-8 text-center">
             <Button size="lg" className="px-8" asChild>
-              <a href="mailto:abhishek@example.com">Send Message</a>
+              <a href="mailto:abhisheksingh@gmail.com">Send Me a Message</a>
             </Button>
           </div>
         </Card>
