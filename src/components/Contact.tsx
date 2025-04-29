@@ -2,7 +2,9 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Github, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, MapPin, Send } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 const Contact: React.FC = () => {
   const contactLinks = [
@@ -40,41 +42,83 @@ const Contact: React.FC = () => {
   
   return (
     <section id="contact" className="py-24 section-padding">
-      <div className="container mx-auto max-w-3xl">
+      <div className="container mx-auto max-w-5xl">
         <h2 className="text-2xl font-bold mb-2 font-mono text-gradient">Get In Touch</h2>
-        <h3 className="text-3xl font-bold mb-6 text-center">Let's Work Together</h3>
-        <p className="text-muted-foreground mb-12 max-w-md mx-auto text-center">
-          I'm currently available for freelance projects and full-time opportunities.
+        <h3 className="text-3xl font-bold mb-6">Let's Work Together</h3>
+        <p className="text-muted-foreground mb-12 max-w-md">
+          I'm currently available for freelance projects and entry-level opportunities.
           Whether you have a project in mind or just want to connect, feel free to reach out!
         </p>
         
-        <Card className="glass p-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {contactLinks.map((link) => (
-              <a 
-                key={link.name}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 p-3 bg-secondary/50 rounded-lg hover:bg-secondary transition-colors"
-              >
-                <div className="h-10 w-10 flex items-center justify-center bg-primary/20 rounded-full">
-                  {link.icon}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <div className="lg:col-span-7">
+            <Card className="glass p-6">
+              <h4 className="font-bold text-lg mb-4">Send Me a Message</h4>
+              <form className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <label htmlFor="name" className="text-sm font-medium">
+                      Your Name
+                    </label>
+                    <Input id="name" placeholder="John Doe" className="glass" />
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="email" className="text-sm font-medium">
+                      Your Email
+                    </label>
+                    <Input id="email" placeholder="john@example.com" type="email" className="glass" />
+                  </div>
                 </div>
-                <div className="text-left">
-                  <div className="text-sm font-medium">{link.name}</div>
-                  <div className="text-sm text-muted-foreground">{link.label}</div>
+                <div className="space-y-2">
+                  <label htmlFor="subject" className="text-sm font-medium">
+                    Subject
+                  </label>
+                  <Input id="subject" placeholder="Project Inquiry" className="glass" />
                 </div>
-              </a>
-            ))}
+                <div className="space-y-2">
+                  <label htmlFor="message" className="text-sm font-medium">
+                    Message
+                  </label>
+                  <Textarea 
+                    id="message" 
+                    placeholder="Hello Abhishek, I'd like to discuss a project opportunity..." 
+                    rows={5}
+                    className="glass"
+                  />
+                </div>
+                <Button type="submit" className="w-full gap-2">
+                  Send Message
+                  <Send className="h-4 w-4" />
+                </Button>
+              </form>
+            </Card>
           </div>
           
-          <div className="mt-8 text-center">
-            <Button size="lg" className="px-8" asChild>
-              <a href="mailto:abhisheksingh@gmail.com">Send Me a Message</a>
-            </Button>
+          <div className="lg:col-span-5">
+            <Card className="glass p-6 h-full">
+              <h4 className="font-bold text-lg mb-6">Contact Information</h4>
+              <div className="grid grid-cols-1 gap-4">
+                {contactLinks.map((link) => (
+                  <a 
+                    key={link.name}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 p-3 bg-primary/10 rounded-lg hover:bg-primary/20 transition-colors"
+                  >
+                    <div className="h-10 w-10 flex items-center justify-center bg-primary/20 rounded-full text-primary">
+                      {link.icon}
+                    </div>
+                    <div className="text-left">
+                      <div className="text-sm font-medium">{link.name}</div>
+                      <div className="text-sm text-muted-foreground">{link.label}</div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </Card>
           </div>
-        </Card>
+        </div>
       </div>
     </section>
   );

@@ -8,6 +8,7 @@ import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import { Badge } from "@/components/ui/badge";
+import { ArrowUp } from 'lucide-react';
 
 const Index: React.FC = () => {
   // Ensure the page starts at the top on initial load
@@ -16,6 +17,29 @@ const Index: React.FC = () => {
   }, []);
 
   const currentYear = new Date().getFullYear();
+  
+  // Back to top functionality
+  const [showBackToTop, setShowBackToTop] = React.useState(false);
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 500) {
+        setShowBackToTop(true);
+      } else {
+        setShowBackToTop(false);
+      }
+    };
+    
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -34,7 +58,7 @@ const Index: React.FC = () => {
       {/* Fixed elements */}
       <Badge 
         variant="outline" 
-        className="fixed bottom-6 right-6 glass hover:bg-primary/20 cursor-pointer transition-all"
+        className="fixed bottom-6 left-6 glass hover:bg-primary/20 cursor-pointer transition-all z-40"
       >
         <a 
           href="https://github.com/abhishek-kumar" 
@@ -45,6 +69,16 @@ const Index: React.FC = () => {
           <span className="text-xs">© {currentYear} Abhishek Kumar</span>
         </a>
       </Badge>
+      
+      {showBackToTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-6 right-6 bg-primary/90 hover:bg-primary text-white p-3 rounded-full shadow-lg transition-all z-40 animate-fade-in"
+          aria-label="Back to top"
+        >
+          <ArrowUp className="h-4 w-4" />
+        </button>
+      )}
     </div>
   );
 };

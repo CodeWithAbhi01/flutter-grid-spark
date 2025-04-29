@@ -1,11 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { Download, Menu } from 'lucide-react';
+import { Download, Menu, Moon, Sun } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
   
   useEffect(() => {
     const handleScroll = () => {
@@ -17,6 +18,18 @@ const Navbar: React.FC = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+  
+  useEffect(() => {
+    if (theme === 'light') {
+      document.documentElement.classList.add('light');
+    } else {
+      document.documentElement.classList.remove('light');
+    }
+  }, [theme]);
+  
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
   
   const navItems = [
     { label: "Home", href: "#home" },
@@ -36,15 +49,27 @@ const Navbar: React.FC = () => {
           <span className="text-primary">/&gt;</span>
         </a>
         
-        <div className="md:hidden">
+        <div className="flex items-center gap-4">
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="text-white"
+            onClick={toggleTheme}
+            className="rounded-full text-muted-foreground hover:text-primary"
+            aria-label="Toggle theme"
           >
-            <Menu />
+            {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
           </Button>
+        
+          <div className="md:hidden">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="text-white"
+            >
+              <Menu />
+            </Button>
+          </div>
         </div>
         
         <nav className={`${
