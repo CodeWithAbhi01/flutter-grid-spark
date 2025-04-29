@@ -123,6 +123,25 @@
       transform: translateX(0);
     }
   }
+  
+  /* Light mode specific styles */
+  .light .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-sm;
+  }
+  
+  .light .glass-card {
+    @apply bg-white/70 backdrop-blur-md border border-gray-100 shadow-sm transition-all hover:bg-white/90 hover:border-gray-200 hover:shadow-md;
+  }
+  
+  /* Mobile nav animations */
+  @keyframes slideDown {
+    from { transform: translateY(-10px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  .mobile-nav-open {
+    animation: slideDown 0.3s ease forwards;
+  }
 }
 
 @keyframes float {
@@ -141,4 +160,19 @@
 
 .animate-pulse-slow {
   animation: pulse-slow 4s ease-in-out infinite;
+}
+
+/* Responsive spacing helpers */
+@layer utilities {
+  .responsive-px {
+    @apply px-4 md:px-8 lg:px-16;
+  }
+  
+  .responsive-py {
+    @apply py-8 md:py-16 lg:py-24;
+  }
+  
+  .responsive-p {
+    @apply p-4 md:p-8 lg:p-16;
+  }
 }
