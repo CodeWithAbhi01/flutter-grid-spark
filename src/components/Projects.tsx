@@ -46,7 +46,7 @@ const Projects: React.FC = () => {
       description: "Flutter app for managing tournaments with slot creation, point tables, and user performance tracking.",
       image: "https://i.imgur.com/JRzS1nO.png", // Using placeholder since external URLs aren't allowed
       tags: ["Flutter", "Dart", "Firebase"],
-      liveUrl: "https://play.google.com/store/apps/details?id=com.abhishek.tracknplay",
+      liveUrl: "https://play.google.com/store/apps/details?id=com.tracknplay&pcampaignid=web_share",
       githubUrl: "https://github.com/abhishek-kumar/tracknplay",
       category: "mobile"
     },
