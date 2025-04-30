@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import ProjectCard from './ProjectCard';
 import { Button } from "@/components/ui/button";
@@ -17,26 +18,28 @@ const Projects: React.FC = () => {
       featured: true,
       category: "web"
     },
-    // {
-    //   id: 2,
-    //   title: "LIVE Result Software",
-    //   description: "A dynamic result management system with responsive design for enhanced user experience and automated testing workflows.",
-    //   image: "/api/placeholder/800/600", // Using placeholder since external URLs aren't allowed
-    //   tags: ["React.js", "JavaScript", "HTML/CSS"],
-    //   liveUrl: "#",
-    //   githubUrl: "https://github.com/abhishek-kumar/live-result",
-    //   category: "web"
-    // },
+    /*
     {
-    //   id: 3,
-    //   title: "Tournament Management System",
-    //   description: "System for tournament registration and result tracking, optimized for performance and user engagement.",
-    //   image: "/api/placeholder/800/600", // Using placeholder since external URLs aren't allowed
-    //   tags: ["HTML", "CSS", "PHP", "JavaScript"],
-    //   liveUrl: "#",
-    //   githubUrl: "https://github.com/abhishek-kumar/tournament-management",
-    //   category: "web"
-    // },
+      id: 2,
+      title: "LIVE Result Software",
+      description: "A dynamic result management system with responsive design for enhanced user experience and automated testing workflows.",
+      image: "/api/placeholder/800/600", // Using placeholder since external URLs aren't allowed
+      tags: ["React.js", "JavaScript", "HTML/CSS"],
+      liveUrl: "#",
+      githubUrl: "https://github.com/abhishek-kumar/live-result",
+      category: "web"
+    },
+    {
+      id: 3,
+      title: "Tournament Management System",
+      description: "System for tournament registration and result tracking, optimized for performance and user engagement.",
+      image: "/api/placeholder/800/600", // Using placeholder since external URLs aren't allowed
+      tags: ["HTML", "CSS", "PHP", "JavaScript"],
+      liveUrl: "#",
+      githubUrl: "https://github.com/abhishek-kumar/tournament-management",
+      category: "web"
+    },
+    */
     {
       id: 4,
       title: "Tracknplay Mobile App",
