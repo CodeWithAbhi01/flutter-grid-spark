@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://github.com/abhishek-kumar" 
+                href="https://github.com/codewithabhi001" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-10 w-10 flex items-center justify-center rounded-full bg-primary/20 text-primary hover:bg-primary hover:text-white transition-colors"
@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
                 <Github className="h-5 w-5" />
               </a>
               <a 
-                href="https://linkedin.com/in/abhishek-kumar" 
+                href="https://www.linkedin.com/in/abhishek-kumar-76b9a924b/" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-10 w-10 flex items-center justify-center rounded-full bg-primary/20 text-primary hover:bg-primary hover:text-white transition-colors"
@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
                 <Linkedin className="h-5 w-5" />
               </a>
               <a 
-                href="mailto:abhisheksingh@gmail.com"
+                href="mailto:abhisheksingh9709844475@gmail.com"
                 className="h-10 w-10 flex items-center justify-center rounded-full bg-primary/20 text-primary hover:bg-primary hover:text-white transition-colors"
                 aria-label="Email"
               >
@@ -71,12 +71,12 @@ const Footer: React.FC = () => {
               <p>Bangalore, India</p>
               <p>
                 <a href="mailto:abhisheksingh@gmail.com" className="hover:text-primary transition-colors">
-                  abhisheksingh@gmail.com
+                  abhisheksingh9709844475@gmail.com
                 </a>
               </p>
               <p>
-                <a href="tel:+915487875421" className="hover:text-primary transition-colors">
-                  +91 548 787 5421
+                <a href="tel:+919304514787" className="hover:text-primary transition-colors">
+                  +91 9304514787
                 </a>
               </p>
             </address>
