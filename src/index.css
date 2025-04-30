@@ -72,7 +72,7 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply tracking-tight text-foreground dark:text-white light:text-black;
+    @apply tracking-tight text-foreground;
   }
 }
 
@@ -243,9 +243,18 @@
   color: hsl(var(--foreground));
 }
 
+/* Dark mode text styling */
+:not(.light) h1,
+:not(.light) h2,
+:not(.light) h3,
+:not(.light) h4,
+:not(.light) h5,
+:not(.light) h6 {
+  color: white;
+}
+
 /* Fix container padding for better mobile experience */
 .container {
   @apply px-4 sm:px-6 md:px-8 lg:px-10;
   width: 100%;
 }
-
