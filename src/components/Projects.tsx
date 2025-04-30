@@ -10,7 +10,7 @@ const Projects: React.FC = () => {
       id: 1,
       title: "PG Management Platform",
       description: "A comprehensive platform for PG listings with multi-role functionality, RESTful APIs, and JWT authentication.",
-      image: "/api/placeholder/800/600", // Using placeholder since external URLs aren't allowed
+      image: "https://i.pinimg.com/736x/cc/96/17/cc9617bf480c510217fec6fa3890617a.jpg", // Using placeholder since external URLs aren't allowed
       tags: ["React.js", "Node.js", "MongoDB", "Razorpay API"],
       liveUrl: "#",
       githubUrl: "https://github.com/abhishek-kumar/pg-management",
