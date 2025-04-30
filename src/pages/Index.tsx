@@ -61,7 +61,7 @@ const Index: React.FC = () => {
         className="fixed bottom-6 left-6 glass hover:bg-primary/20 cursor-pointer transition-all z-40"
       >
         <a 
-          href="https://github.com/abhishek-kumar" 
+          href="https://github.com/codewithabhi001" 
           target="_blank" 
           rel="noopener noreferrer"
           className="flex items-center gap-2"
