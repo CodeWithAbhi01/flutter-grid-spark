@@ -11,25 +11,25 @@ const Contact: React.FC = () => {
     {
       name: "Email",
       icon: <Mail className="h-5 w-5" />,
-      href: "mailto:abhisheksingh@gmail.com",
+      href: "mailto:abhisheksingh9709844475@gmail.com",
       label: "abhisheksingh@gmail.com"
     },
     {
       name: "LinkedIn",
       icon: <Linkedin className="h-5 w-5" />,
-      href: "https://linkedin.com/in/abhishek-kumar",
+      href: "https://www.linkedin.com/in/abhishek-kumar-76b9a924b/",
       label: "linkedin.com/in/abhishek-kumar"
     },
     {
       name: "GitHub",
       icon: <Github className="h-5 w-5" />,
-      href: "https://github.com/abhishek-kumar",
+      href: "https://github.com/codewithabhi001",
       label: "github.com/abhishek-kumar"
     },
     {
       name: "Phone",
       icon: <Phone className="h-5 w-5" />,
-      href: "tel:+915487875421",
+      href: "tel:+91 9304514787",
       label: "+91 548 787 5421"
     },
     {
