@@ -43,17 +43,58 @@ const Index: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      {/* Main background particles */}
       <ParticleBackground />
+      
       <Navbar />
       
-      <main className="w-full">
+      <main className="w-full px-4 sm:px-6 md:px-0">
         <Hero />
-        <About />
-        <Projects />
-        <Contact />
+        
+        <div className="relative">
+          {/* About section particles with different color */}
+          <ParticleBackground 
+            className="absolute top-0 left-0 w-full h-full z-0 opacity-30" 
+            particleColor="rgba(180, 180, 255, 0.3)"
+            connectionColor="rgba(180, 180, 255, 0.08)"
+            density={30}
+          />
+          <About />
+        </div>
+        
+        <div className="relative">
+          {/* Projects section particles */}
+          <ParticleBackground 
+            className="absolute top-0 left-0 w-full h-full z-0 opacity-20" 
+            particleColor="rgba(255, 180, 180, 0.25)"
+            connectionColor="rgba(255, 180, 180, 0.06)"
+            density={40}
+          />
+          <Projects />
+        </div>
+        
+        <div className="relative">
+          {/* Contact section particles */}
+          <ParticleBackground 
+            className="absolute top-0 left-0 w-full h-full z-0 opacity-25" 
+            particleColor="rgba(180, 255, 180, 0.25)"
+            connectionColor="rgba(180, 255, 180, 0.07)"
+            density={35}
+          />
+          <Contact />
+        </div>
       </main>
       
-      <Footer />
+      <div className="relative">
+        {/* Footer section particles */}
+        <ParticleBackground 
+          className="absolute top-0 left-0 w-full h-full z-0 opacity-10" 
+          particleColor="rgba(200, 200, 250, 0.2)"
+          connectionColor="rgba(200, 200, 250, 0.05)"
+          density={25}
+        />
+        <Footer />
+      </div>
       
       {/* Fixed elements */}
       <Badge 
@@ -84,3 +125,4 @@ const Index: React.FC = () => {
 };
 
 export default Index;
+
