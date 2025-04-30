@@ -10,21 +10,7 @@ interface Particle {
   color: string;
 }
 
-interface ParticleBackgroundProps {
-  className?: string;
-  particleColor?: string;
-  connectionColor?: string;
-  density?: number;
-  opacity?: number;
-}
-
-const ParticleBackground: React.FC<ParticleBackgroundProps> = ({
-  className = "fixed top-0 left-0 w-full h-full -z-10 opacity-40",
-  particleColor,
-  connectionColor = "rgba(155, 155, 255, 0.1)",
-  density = 50,
-  opacity = 0.4
-}) => {
+const ParticleBackground: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   
   useEffect(() => {
@@ -36,7 +22,7 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({
     
     let animationFrameId: number;
     let particles: Particle[] = [];
-    const particleCount = density;
+    const particleCount = 50;
     const connectionDistance = 150;
     
     const handleResize = () => {
@@ -48,16 +34,13 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({
     const initParticles = () => {
       particles = [];
       for (let i = 0; i < particleCount; i++) {
-        const size = Math.random() * 1.5 + 0.5;
-        const defaultColor = `rgba(${Math.random() * 50 + 100}, ${Math.random() * 50 + 100}, ${Math.random() * 255}, ${Math.random() * 0.3 + 0.2})`;
-        
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          size: size,
+          size: Math.random() * 1.5 + 0.5,
           speedX: Math.random() * 0.5 - 0.25,
           speedY: Math.random() * 0.5 - 0.25,
-          color: particleColor || defaultColor
+          color: `rgba(${Math.random() * 50 + 100}, ${Math.random() * 50 + 100}, ${Math.random() * 255}, ${Math.random() * 0.3 + 0.2})`
         });
       }
     };
@@ -95,8 +78,7 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            const alpha = 1 - distance/connectionDistance;
-            ctx.strokeStyle = connectionColor.replace("0.1", (alpha * 0.1).toString());
+            ctx.strokeStyle = `rgba(155, 155, 255, ${0.1 * (1 - distance/connectionDistance)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
@@ -114,16 +96,15 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({
       window.removeEventListener('resize', handleResize);
       window.cancelAnimationFrame(animationFrameId);
     };
-  }, [density, particleColor, connectionColor]);
+  }, []);
   
   return (
     <canvas 
       ref={canvasRef} 
-      className={className}
-      style={{ pointerEvents: 'none', opacity: opacity }}
+      className="fixed top-0 left-0 w-full h-full -z-10 opacity-40"
+      style={{ pointerEvents: 'none' }}
     />
   );
 };
 
 export default ParticleBackground;
-
