@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 
 const Hero: React.FC = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center section-padding grid-background">
+    <section id="home" className="min-h-screen flex items-center py-24 px-4 md:px-6 lg:px-8 grid-background">
       <div className="container mx-auto max-w-5xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-8 animate-fade-in">
@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
               
               <p className="text-lg text-muted-foreground max-w-xl mb-8">
                 Passionate about building responsive web applications and mobile apps with modern frameworks and libraries.
-                Currently working as a Technical Support Advisor, developing my skills in Flutter, React, and Node.js.
+                Focusing on developing my skills in Flutter, React, and Node.js.
               </p>
               
               <div className="flex flex-wrap gap-6 mb-10">
@@ -85,7 +85,7 @@ const Hero: React.FC = () => {
                   className="group glass"
                   asChild
                 >
-                  <a href="#" onClick={(e) => e.preventDefault()}>
+                  <a href="/abhishek-kumar-resume.pdf" download="Abhishek_Kumar_Resume.pdf">
                     Download Resume
                     <Download className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
                   </a>

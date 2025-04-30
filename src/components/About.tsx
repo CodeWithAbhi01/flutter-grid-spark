@@ -22,12 +22,12 @@ const About: React.FC = () => {
     {
       title: "Technical Support Advisor",
       company: "Concentrix Services India Private Limited",
-      duration: "Current Position",
+      duration: "Previous Position",
       location: "Bangalore",
       description: [
-        "Providing technical support and resolving customer issues in Operations department",
-        "Working in Company Grade 12 as Technical Support Representative",
-        "Demonstrating strong problem-solving and customer service skills"
+        "Provided technical support and resolved customer issues in Operations department",
+        "Worked in Company Grade 12 as Technical Support Representative",
+        "Demonstrated strong problem-solving and customer service skills"
       ]
     },
     {
@@ -44,7 +44,7 @@ const About: React.FC = () => {
   ];
   
   return (
-    <section id="about" className="py-24 section-padding">
+    <section id="about" className="py-24 px-4 md:px-6 lg:px-8">
       <div className="container mx-auto max-w-5xl">
         <div className="mb-12">
           <h2 className="text-2xl font-bold mb-2 font-mono text-gradient">About Me</h2>
@@ -54,11 +54,11 @@ const About: React.FC = () => {
             <div className="md:col-span-7 space-y-6 text-muted-foreground">
               <p className="text-lg">
                 I'm a passionate full stack developer with experience in both web and mobile development. 
-                Currently working as a <span className="text-primary">Technical Support Advisor at Concentrix Services India Private Limited</span> in Bangalore, 
-                where I provide technical support and resolve customer issues in the Operations department.
+                I previously worked as a <span className="text-primary">Technical Support Advisor at Concentrix Services India Private Limited</span> in Bangalore, 
+                where I provided technical support and resolved customer issues in the Operations department.
               </p>
               <p>
-                Previously, I worked as a <span className="text-primary">Software Development Intern at Biztechnosys Infotech Pvt Ltd</span>, 
+                Previously, I also worked as a <span className="text-primary">Software Development Intern at Biztechnosys Infotech Pvt Ltd</span>, 
                 where I developed mobile and web applications using React.js, Flutter, and Node.js, and implemented 
                 automated CI/CD pipelines that reduced deployment time by 40%.
               </p>

@@ -42,11 +42,11 @@ const Index: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <ParticleBackground />
       <Navbar />
       
-      <main>
+      <main className="px-4 md:px-6 lg:px-8">
         <Hero />
         <About />
         <Projects />

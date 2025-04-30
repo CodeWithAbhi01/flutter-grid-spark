@@ -94,8 +94,10 @@ const Navbar: React.FC = () => {
               </li>
             ))}
             <li>
-              <Button className="gap-2 transition-all duration-300 hover:scale-105" onClick={(e) => e.preventDefault()}>
-                Resume <Download className="h-4 w-4" />
+              <Button className="gap-2 transition-all duration-300 hover:scale-105" asChild>
+                <a href="/abhishek-kumar-resume.pdf" download="Abhishek_Kumar_Resume.pdf">
+                  Resume <Download className="h-4 w-4" />
+                </a>
               </Button>
             </li>
           </ul>
