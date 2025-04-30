@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6 py-4 flex items-center justify-between">
         <a href="#home" className="text-xl font-mono font-bold">
           <span className="text-primary">&lt;</span>
-          <span className="text-foreground">Abhishek Kumar</span>
+          <span className={theme === 'light' ? 'text-gray-900' : 'text-white'}>Abhishek Kumar</span>
           <span className="text-primary">/&gt;</span>
         </a>
         
@@ -66,7 +66,11 @@ const Navbar: React.FC = () => {
                 <li key={item.label}>
                   <a 
                     href={item.href}
-                    className="transition-colors font-medium text-muted-foreground hover:text-primary"
+                    className={`transition-colors font-medium ${
+                      theme === 'light' 
+                        ? 'text-gray-800 hover:text-primary' 
+                        : 'text-muted-foreground hover:text-primary'
+                    }`}
                   >
                     {item.label}
                   </a>
