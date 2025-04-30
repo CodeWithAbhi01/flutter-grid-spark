@@ -28,20 +28,20 @@ const Projects: React.FC = () => {
     //   category: "web"
     // },
     {
-      id: 3,
-      title: "Tournament Management System",
-      description: "System for tournament registration and result tracking, optimized for performance and user engagement.",
-      image: "/api/placeholder/800/600", // Using placeholder since external URLs aren't allowed
-      tags: ["HTML", "CSS", "PHP", "JavaScript"],
-      liveUrl: "#",
-      githubUrl: "https://github.com/abhishek-kumar/tournament-management",
-      category: "web"
-    },
+    //   id: 3,
+    //   title: "Tournament Management System",
+    //   description: "System for tournament registration and result tracking, optimized for performance and user engagement.",
+    //   image: "/api/placeholder/800/600", // Using placeholder since external URLs aren't allowed
+    //   tags: ["HTML", "CSS", "PHP", "JavaScript"],
+    //   liveUrl: "#",
+    //   githubUrl: "https://github.com/abhishek-kumar/tournament-management",
+    //   category: "web"
+    // },
     {
       id: 4,
       title: "Tracknplay Mobile App",
       description: "Flutter app for managing tournaments with slot creation, point tables, and user performance tracking.",
-      image: "/api/placeholder/800/600", // Using placeholder since external URLs aren't allowed
+      image: "https://i.imgur.com/JRzS1nO.png", // Using placeholder since external URLs aren't allowed
       tags: ["Flutter", "Dart", "Firebase"],
       liveUrl: "https://play.google.com/store/apps/details?id=com.abhishek.tracknplay",
       githubUrl: "https://github.com/abhishek-kumar/tracknplay",
