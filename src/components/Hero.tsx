@@ -32,22 +32,22 @@ const Hero: React.FC = () => {
               
               <div className="flex flex-wrap gap-6 mb-10">
                 <a 
-                  href="mailto:abhisheksingh@gmail.com" 
+                  href="mailto:abhisheksingh9709844475@gmail.com" 
                   className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Mail className="h-5 w-5" />
-                  <span>abhisheksingh@gmail.com</span>
+                  <span>abhisheksingh9709844475@gmail.com</span>
                 </a>
                 
                 <a 
-                  href="tel:+915487875421" 
+                  href="tel:+919304514787" 
                   className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
                 >
-                  <span>+91 548 787 5421</span>
+                  <span>+91 9304514787</span>
                 </a>
                 
                 <a 
-                  href="https://github.com/abhishek-kumar" 
+                  href="https://github.com/codewithabhi001" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
@@ -57,7 +57,7 @@ const Hero: React.FC = () => {
                 </a>
                 
                 <a 
-                  href="https://linkedin.com/in/abhishek-kumar" 
+                  href="https://www.linkedin.com/in/abhishek-kumar-76b9a924b/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
