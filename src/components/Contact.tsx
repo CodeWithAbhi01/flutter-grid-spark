@@ -12,7 +12,7 @@ const Contact: React.FC = () => {
       name: "Email",
       icon: <Mail className="h-5 w-5" />,
       href: "mailto:abhisheksingh9709844475@gmail.com",
-      label: "abhisheksingh@gmail.com"
+      label: "abhisheksingh9709844475@gmail.com"
     },
     {
       name: "LinkedIn",
@@ -30,7 +30,7 @@ const Contact: React.FC = () => {
       name: "Phone",
       icon: <Phone className="h-5 w-5" />,
       href: "tel:+91 9304514787",
-      label: "+91 548 787 5421"
+      label: "+91 9304514787"
     },
     {
       name: "Location",
