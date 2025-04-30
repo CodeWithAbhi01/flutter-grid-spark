@@ -1,17 +1,16 @@
-
 import React, { useState } from 'react';
 import ProjectCard from './ProjectCard';
 import { Button } from "@/components/ui/button";
 
 const Projects: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<string>("all");
-  
+
   const projects = [
     {
       id: 1,
       title: "PG Management Platform",
       description: "A comprehensive platform for PG listings with multi-role functionality, RESTful APIs, and JWT authentication.",
-      image: "https://picsum.photos/id/26/800/600",
+      image: "https://via.placeholder.com/800x600?text=PG+Management+Platform",
       tags: ["React.js", "Node.js", "MongoDB", "Razorpay API"],
       liveUrl: "#",
       githubUrl: "https://github.com/abhishek-kumar/pg-management",
@@ -22,7 +21,7 @@ const Projects: React.FC = () => {
       id: 2,
       title: "LIVE Result Software",
       description: "A dynamic result management system with responsive design for enhanced user experience and automated testing workflows.",
-      image: "https://picsum.photos/id/180/800/600",
+      image: "https://via.placeholder.com/800x600?text=LIVE+Result+Software",
       tags: ["React.js", "JavaScript", "HTML/CSS"],
       liveUrl: "#",
       githubUrl: "https://github.com/abhishek-kumar/live-result",
@@ -32,7 +31,7 @@ const Projects: React.FC = () => {
       id: 3,
       title: "Tournament Management System",
       description: "System for tournament registration and result tracking, optimized for performance and user engagement.",
-      image: "https://picsum.photos/id/342/800/600",
+      image: "https://via.placeholder.com/800x600?text=Tournament+Management+System",
       tags: ["HTML", "CSS", "PHP", "JavaScript"],
       liveUrl: "#",
       githubUrl: "https://github.com/abhishek-kumar/tournament-management",
@@ -42,22 +41,22 @@ const Projects: React.FC = () => {
       id: 4,
       title: "Tracknplay Mobile App",
       description: "Flutter app for managing tournaments with slot creation, point tables, and user performance tracking.",
-      image: "https://picsum.photos/id/237/800/600",
+      image: "https://via.placeholder.com/800x600?text=Tracknplay+Mobile+App",
       tags: ["Flutter", "Dart", "Firebase"],
       liveUrl: "https://play.google.com/store/apps/details?id=com.abhishek.tracknplay",
       githubUrl: "https://github.com/abhishek-kumar/tracknplay",
       category: "mobile"
     },
   ];
-  
+
   const filters = [
     { label: "All Projects", value: "all" },
     { label: "Web Apps", value: "web" },
     { label: "Mobile Apps", value: "mobile" },
   ];
-  
-  const filteredProjects = activeFilter === "all" 
-    ? projects 
+
+  const filteredProjects = activeFilter === "all"
+    ? projects
     : projects.filter(project => project.category === activeFilter);
 
   return (
@@ -65,7 +64,7 @@ const Projects: React.FC = () => {
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-2xl font-bold mb-2 font-mono text-gradient">My Projects</h2>
         <h3 className="text-3xl font-bold mb-6">Featured Work</h3>
-        
+
         <div className="flex flex-wrap gap-2 mb-12">
           {filters.map((filter) => (
             <Button
@@ -79,7 +78,7 @@ const Projects: React.FC = () => {
             </Button>
           ))}
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {filteredProjects.map((project) => (
             <ProjectCard
