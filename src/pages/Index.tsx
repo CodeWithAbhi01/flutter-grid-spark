@@ -46,7 +46,7 @@ const Index: React.FC = () => {
       <ParticleBackground />
       <Navbar />
       
-      <main className="px-4 md:px-6 lg:px-8">
+      <main className="w-full">
         <Hero />
         <About />
         <Projects />
@@ -66,7 +66,7 @@ const Index: React.FC = () => {
           rel="noopener noreferrer"
           className="flex items-center gap-2"
         >
-          <span className="text-xs">© {currentYear} Abhishek Kumar</span>
+          <span className="text-xs text-foreground">© {currentYear} Abhishek Kumar</span>
         </a>
       </Badge>
       

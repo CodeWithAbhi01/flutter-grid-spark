@@ -43,66 +43,90 @@ const Navbar: React.FC = () => {
       isScrolled ? 'bg-background/80 backdrop-blur-lg shadow-md' : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-4 md:px-6 py-4 flex items-center justify-between">
-        <a href="#home" className={`text-xl font-mono font-bold ${theme === 'light' ? 'text-gray-900' : 'text-white'}`}>
+        <a href="#home" className="text-xl font-mono font-bold">
           <span className="text-primary">&lt;</span>
-          Abhishek Kumar
+          <span className={theme === 'light' ? 'text-gray-900' : 'text-white'}>Abhishek Kumar</span>
           <span className="text-primary">/&gt;</span>
         </a>
         
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 md:gap-4">
           <Button
             variant="ghost"
             size="icon"
             onClick={toggleTheme}
-            className={`rounded-full ${theme === 'light' ? 'text-gray-800 hover:bg-gray-200' : 'text-muted-foreground hover:text-primary'}`}
+            className="rounded-full text-foreground hover:text-primary"
             aria-label="Toggle theme"
           >
             {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
           </Button>
         
+          <nav className="hidden md:block">
+            <ul className="flex items-center space-x-6">
+              {navItems.map((item) => (
+                <li key={item.label}>
+                  <a 
+                    href={item.href}
+                    className={`transition-colors font-medium ${
+                      theme === 'light' 
+                        ? 'text-gray-800 hover:text-primary' 
+                        : 'text-muted-foreground hover:text-primary'
+                    }`}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+              <li>
+                <Button className="gap-2 transition-all duration-300 hover:scale-105" asChild>
+                  <a href="/abhishek-kumar-resume.pdf" download="Abhishek_Kumar_Resume.pdf">
+                    Resume <Download className="h-4 w-4" />
+                  </a>
+                </Button>
+              </li>
+            </ul>
+          </nav>
+          
           <div className="md:hidden">
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={theme === 'light' ? 'text-gray-900' : 'text-white'}
+              className="text-foreground"
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             >
               {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
           </div>
         </div>
-        
-        <nav className={`${
-          mobileMenuOpen 
-            ? 'absolute top-full left-0 right-0 bg-background/95 backdrop-blur-lg shadow-lg p-4 border-t border-border/50 animate-fade-in' 
-            : 'hidden'
-        } md:block md:static md:bg-transparent md:shadow-none md:p-0 md:border-none`}>
-          <ul className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
-            {navItems.map((item) => (
-              <li key={item.label}>
-                <a 
-                  href={item.href}
-                  className={`transition-colors font-medium ${
-                    theme === 'light' 
-                      ? 'text-gray-800 hover:text-primary' 
-                      : 'text-muted-foreground hover:text-primary'
-                  }`}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-            <li>
-              <Button className="gap-2 transition-all duration-300 hover:scale-105" asChild>
-                <a href="/abhishek-kumar-resume.pdf" download="Abhishek_Kumar_Resume.pdf">
-                  Resume <Download className="h-4 w-4" />
-                </a>
-              </Button>
-            </li>
-          </ul>
-        </nav>
       </div>
+      
+      {/* Mobile menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden bg-background/95 backdrop-blur-lg shadow-lg border-t border-border/50 animate-fade-in">
+          <nav className="container mx-auto px-4 py-4">
+            <ul className="flex flex-col items-start space-y-4">
+              {navItems.map((item) => (
+                <li key={item.label} className="w-full">
+                  <a 
+                    href={item.href}
+                    className="block w-full py-2 text-foreground hover:text-primary transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+              <li className="w-full pt-2">
+                <Button className="w-full gap-2" asChild>
+                  <a href="/abhishek-kumar-resume.pdf" download="Abhishek_Kumar_Resume.pdf" onClick={() => setMobileMenuOpen(false)}>
+                    Resume <Download className="h-4 w-4" />
+                  </a>
+                </Button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      )}
     </header>
   );
 };

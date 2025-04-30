@@ -8,12 +8,12 @@ const Footer: React.FC = () => {
   
   return (
     <footer className="py-12 border-t border-border/30 bg-secondary/10">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           <div className="md:col-span-5">
-            <a href="#home" className="text-2xl font-mono font-bold text-white mb-4 block">
+            <a href="#home" className="text-2xl font-mono font-bold mb-4 block">
               <span className="text-primary">&lt;</span>
-              Abhishek Kumar
+              <span className="text-foreground">Abhishek Kumar</span>
               <span className="text-primary">/&gt;</span>
             </a>
             <p className="text-muted-foreground mb-6 max-w-md">
@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
           </div>
           
           <div className="md:col-span-3">
-            <h3 className="font-bold mb-4">Quick Links</h3>
+            <h3 className="font-bold mb-4 text-foreground">Quick Links</h3>
             <ul className="space-y-2">
               {['Home', 'About', 'Projects', 'Contact'].map((item) => (
                 <li key={item}>
@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
           </div>
           
           <div className="md:col-span-4">
-            <h3 className="font-bold mb-4">Contact Info</h3>
+            <h3 className="font-bold mb-4 text-foreground">Contact Info</h3>
             <address className="not-italic space-y-2 text-muted-foreground">
               <p>Bangalore, India</p>
               <p>
@@ -87,7 +87,7 @@ const Footer: React.FC = () => {
         
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Abhishek Kumar. All rights reserved.
+            © {currentYear} <span className="text-foreground">Abhishek Kumar</span>. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground mt-2 md:mt-0">
             Built with React, Tailwind CSS, and shadcn/ui
