@@ -85,7 +85,7 @@ const Hero: React.FC = () => {
                   className="group glass"
                   asChild
                 >
-                  <a href="/abhishek-kumar-resume.pdf" download="resume.pdf">
+                  <a href="/resume.pdf" download="abhishek-kumar-resume.pdf">
                     Download Resume
                     <Download className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
                   </a>
