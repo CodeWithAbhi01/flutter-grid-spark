@@ -118,7 +118,7 @@ const Navbar: React.FC = () => {
               ))}
               <li className="w-full pt-2">
                 <Button className="w-full gap-2" asChild>
-                  <a href="/abhishek-kumar-resume.pdf" download="Abhishek_Kumar_Resume.pdf" onClick={() => setMobileMenuOpen(false)}>
+                  <a href="/abhishek-kumar-resume.pdf" download="resume.pdf" onClick={() => setMobileMenuOpen(false)}>
                     Resume <Download className="h-4 w-4" />
                   </a>
                 </Button>
